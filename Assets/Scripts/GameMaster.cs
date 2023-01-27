@@ -5,6 +5,16 @@ using UnityEngine;
 public class GameMaster : MonoBehaviour
 {
     public static GameMaster gm;
+    private static int _remainingLives = 3;
+    public static int RemainingLives
+    {
+        get { return _remainingLives; }
+        set
+        {
+
+        }
+    }
+
     private void Awake()
     {
         if (gm == null)
@@ -23,7 +33,8 @@ public class GameMaster : MonoBehaviour
 
     public Transform spawnPrefab;
 
-
+    [SerializeField]
+    private  Transform gameOverUI;
 
     private void Start()
     {
@@ -48,8 +59,29 @@ public class GameMaster : MonoBehaviour
     {
 
         Destroy(player.gameObject);
+        _remainingLives -= 1;
+        if (_remainingLives <= 0)
+        {
+            
+            gm.EndGame();
+        }
+        else
+        {
+
         gm.StartCoroutine(gm.RespawnPlayer());
+        }
     }
+
+
+
+    public  void EndGame() {
+
+        gameOverUI.gameObject.SetActive(true);
+    }
+
+
+
+
 
     public static void KillEnemy(Enemy _enemy)
     {

@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 627947773455063587}
   - component: {fileID: 909944173}
   - component: {fileID: 909944174}
+  - component: {fileID: 627947774162632529}
   m_Layer: 0
   m_Name: _GM
   m_TagString: GM
@@ -209,3 +210,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
+--- !u!114 &627947774162632529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627947773455063590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac132b04ffd35fb44a3a8b70345b7a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - name: AlienInvasion
+    enemy: {fileID: 9036428508483122647, guid: 6beba16d939e48e489804abf15976722, type: 3}
+    count: 2
+    rate: 1
+  - name: AlienInvasion2.0
+    enemy: {fileID: 9036428508483122647, guid: 6beba16d939e48e489804abf15976722, type: 3}
+    count: 3
+    rate: 1.5
+  - name: Alien Swarm
+    enemy: {fileID: 9036428508483122647, guid: 6beba16d939e48e489804abf15976722, type: 3}
+    count: 5
+    rate: 2
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  timeBetweenWaves: 5
+  waveCountdown: 0
